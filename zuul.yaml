@@ -5,7 +5,7 @@
       initial check status.
     manager: independent
     trigger:
-      github.com:
+      github:
         - event: pull_request
           action:
             - opened
@@ -15,14 +15,14 @@
           action: comment
           comment: (?i)^\s*recheck\s*$
     start:
-      github.com:
+      github:
         status: 'pending'
         status-url: "https://zuul.zuul-ci.org/zuul/status.html"
         comment: false
     success:
-      github.com:
+      github:
         status: 'success'
       
     failure:
-      github.com:
+      github:
         status: 'failure'
