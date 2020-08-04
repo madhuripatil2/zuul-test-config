@@ -85,24 +85,22 @@
     window-floor: 20
     window-increase-factor: 2
 - pipeline:
-   name: post
-   post-review: true
-   description: This pipeline runs jobs that operate after each change is merged.
-   manager: independent
-   precedence: low
-   trigger:
-     github:
-       - event: push
-         ref: ^refs/heads/.*$
-    start:
+    name: post
+    post-review: true
+    description: This pipeline runs jobs that operate after each change is merged.
+    manager: independent
+    precedence: low
+    trigger:
+      github.com:
+        - event: push
+          ref: ^refs/heads/.*$
+    success:
       github:
-        status: 'pending'
-        status-url: "https://zuul.zuul-ci.org/zuul/status.html"
-        comment: false
-   success:
-     github:
-       status: 'success'
-   failure:
-     github:
-       status: 'Failure'
+        status: 'success'
+        merge: true
+        comment: true
       
+    failure:
+      github:
+        status: 'failure'
+        comment: true
