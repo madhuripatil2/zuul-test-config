@@ -91,7 +91,7 @@
     manager: independent
     precedence: low
     trigger:
-      github.com:
+      github:
         - event: push
           ref: ^refs/heads/.*$
     success:
