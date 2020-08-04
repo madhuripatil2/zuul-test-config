@@ -94,6 +94,11 @@
      github:
        - event: push
          ref: ^refs/heads/.*$
+    start:
+      github:
+        status: 'pending'
+        status-url: "https://zuul.zuul-ci.org/zuul/status.html"
+        comment: false
    success:
      github:
        status: 'success'
