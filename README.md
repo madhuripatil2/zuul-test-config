@@ -1,2 +1,2 @@
 # zuul-test-config
-zuul CI
+zuul CI madhuri
