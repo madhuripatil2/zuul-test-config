@@ -1,4 +1,4 @@
--- pipeline:
+- pipeline:
     name: check
     description: |
       Newly uploaded patchsets enter this pipeline to receive an
