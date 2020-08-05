@@ -104,7 +104,6 @@
        github:
          status: 'failure'
          comment: true
-
 - pipeline:
     name: tag
     description: This pipeline runs jobs in response to any tag event.
