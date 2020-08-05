@@ -104,20 +104,5 @@
        github:
          status: 'failure'
          comment: true
-- pipeline:
-     name: tag
-     description: This pipeline runs jobs in response to any tag event.
-     manager: independent
-     precedence: high
-     post-review: True
-     trigger:
-       github:
-         - event: push
-          ref: ^refs/tags/.*$
-     success:
-       github:
-         status: 'success'
-     failure:
-       github:
-         status: 'Failure'
+
         
