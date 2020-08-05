@@ -14,18 +14,18 @@
          - event: pull_request
            action: comment
            comment: (?i)^\s*recheck\s*$
-    start:
-      github:
-        status: 'pending'
-        status-url: "https://zuul.zuul-ci.org/zuul/status.html"
-        comment: false
-    success:
-      github:
-        status: 'success'
+     start:
+       github:
+         status: 'pending'
+         status-url: "https://zuul.zuul-ci.org/zuul/status.html"
+         comment: false
+     success:
+       github:
+         status: 'success'
       
-    failure:
-      github:
-        status: 'failure'
+     failure:
+       github:
+         status: 'failure'
  - pipeline:
      name: gate
      description: |
@@ -45,8 +45,8 @@
          label: gate
          open: True
          current-patchset: True
-    trigger:
-      github:
+     trigger:
+       github:
         - event: pull_request_review
           action: submitted
           state: approved
@@ -66,24 +66,24 @@
           action: labeled
           label:
             - gate
-    start:
-      github:
-        status: 'pending'
-        status-url: "https://zuul.zuul-ci.org/zuul/status.html"
-        comment: false
-    success:
-      github:
-        status: 'success'
-        merge: true
-        comment: true
+     start:
+       github:
+         status: 'pending'
+         status-url: "https://zuul.zuul-ci.org/zuul/status.html"
+         comment: false
+     success:
+       github:
+         status: 'success'
+         merge: true
+         comment: true
       
-    failure:
-      github:
-        status: 'failure'
-        comment: true
+     failure:
+       github:
+         status: 'failure'
+         comment: true
       
-    window-floor: 20
-    window-increase-factor: 2
+     window-floor: 20
+     window-increase-factor: 2
  - pipeline:
      name: post
      post-review: true
